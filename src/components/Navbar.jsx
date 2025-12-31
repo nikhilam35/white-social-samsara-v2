@@ -21,7 +21,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0 cursor-pointer" onClick={() => navigate('/')}>
-                        <img src="/logo.png" alt="Social Samsara" className="h-28 w-auto object-contain filter invert" />
+                        <img src="/logo.png" alt="Social Samsara" className="h-28 w-auto object-contain filter invert hue-rotate-180" />
                     </div>
 
                     {/* Desktop Menu */}
