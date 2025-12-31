@@ -16,7 +16,7 @@ const Why = () => {
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                    <h1 className="text-4xl md:text-6xl font-light mb-6 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
                         Tired of Your Brand Just Existing?
                     </h1>
                     <p className="text-2xl text-white font-light">It's Time to Thrive.</p>

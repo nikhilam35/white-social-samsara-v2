@@ -15,7 +15,7 @@ const About = () => {
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white">
+                    <h1 className="text-4xl md:text-5xl font-light mb-8 text-white">
                         Transforming Brands Through the <br className="hidden md:block" /> Cycles of Growth
                     </h1>
                     <p className="text-xl text-gray-300 leading-relaxed">
