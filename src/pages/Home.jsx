@@ -8,9 +8,7 @@ import HeroBackground from '../components/HeroBackground';
 const Home = () => {
     const navigate = useNavigate();
 
-    const brandLogos = [
-        "Google", "Amazon", "Tesla", "SpaceX", "Microsoft" // Placeholders for now
-    ];
+
 
     return (
         <div className="min-h-screen flex flex-col relative">
@@ -97,14 +95,32 @@ const Home = () => {
             </section>
 
             {/* Logos Section */}
-            <section className="py-20 border-t border-white/10 z-10 relative">
-                <div className="max-w-7xl mx-auto px-6 text-center">
-                    <p className="text-sm font-medium text-gray-500 uppercase tracking-widest mb-10">Trusted by the Brands You Know</p>
-                    <div className="flex flex-wrap justify-center gap-12 items-center opacity-60">
-                        {brandLogos.map(brand => (
-                            <div key={brand} className="text-2xl font-bold text-white/40">{brand}</div>
+            <section className="py-20 border-t border-white/10 z-10 relative bg-black overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 text-center mb-12">
+                    <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">Trusted by the Brands You Know</p>
+                </div>
+
+                {/* Infinite Carousel */}
+                <div className="relative flex overflow-hidden w-full mask-linear-fade">
+                    <motion.div
+                        className="flex gap-20 items-center flex-nowrap"
+                        animate={{ x: "-50%" }}
+                        transition={{
+                            ease: "linear",
+                            duration: 30, // Adjust speed as needed
+                            repeat: Infinity,
+                        }}
+                    >
+                        {/* Duplicate the image multiple times to ensure seamless loop */}
+                        {[...Array(4)].map((_, i) => (
+                            <img
+                                key={i}
+                                src="/brand-logos.png"
+                                alt="Brand Logos"
+                                className="h-16 md:h-20 w-auto object-contain max-w-none opacity-60 grayscale hover:grayscale-0 transition-all duration-300"
+                            />
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
