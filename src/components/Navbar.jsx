@@ -22,9 +22,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 cursor-pointer" onClick={() => navigate('/')}>
-                        <span className="text-2xl font-light tracking-wider text-white">
-                            Social <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Samsara</span>
-                        </span>
+                        <img src="/logo.png" alt="Social Samsara" className="h-12 w-auto object-contain" />
                     </div>
 
                     {/* Desktop Menu */}
