@@ -8,6 +8,7 @@ import Navbar from './Navbar.jsx';
 
 const HeroScreen = () => {
     const { nextStage } = useCalculator();
+    // Force HMR update
     const { headline, subtext, cta, secondary } = COPY.LANDING;
 
     return (
@@ -25,7 +26,7 @@ const HeroScreen = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight mb-8 text-black" style={{ fontWeight: 450 }}>
                         {headline.split('\n').map((line, i) => (
                             <span key={i} className={`block ${i === 1 ? 'xl:whitespace-nowrap' : ''}`}>{line}</span>
                         ))}
@@ -37,10 +38,10 @@ const HeroScreen = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
-                    <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl text-black/60 mb-12 max-w-2xl mx-auto leading-relaxed">
                         {subtext.split(/(\(.*?\))/).map((part, index) =>
                             part.startsWith('(') && part.endsWith(')') ? (
-                                <span key={index} className="text-white font-medium">
+                                <span key={index} className="text-black font-medium">
                                     {part.slice(1, -1)}
                                 </span>
                             ) : (
@@ -61,9 +62,9 @@ const HeroScreen = () => {
                         whileTap={{ scale: 0.95 }}
                         animate={{
                             boxShadow: [
-                                "0 0 0 0 rgba(255, 255, 255, 0)",
-                                "0 0 0 10px rgba(255, 255, 255, 0.1)",
-                                "0 0 0 20px rgba(255, 255, 255, 0)"
+                                "0 0 0 0 rgba(0, 0, 0, 0)",
+                                "0 0 0 10px rgba(0, 0, 0, 0.05)",
+                                "0 0 0 20px rgba(0, 0, 0, 0)"
                             ]
                         }}
                         transition={{
@@ -71,13 +72,13 @@ const HeroScreen = () => {
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
-                        className="group relative inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full text-lg font-medium tracking-wide hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all"
+                        className="group relative inline-flex items-center gap-2 px-8 py-4 bg-black text-white rounded-full text-lg font-medium tracking-wide hover:bg-[#FF3B30] hover:shadow-xl transition-all"
                     >
                         {cta}
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
 
-                        {/* Ripple Effect Ring (Pseudo-like element for extra wave) */}
-                        <div className="absolute inset-0 rounded-full border border-white opacity-0 group-hover:animate-ping pointer-events-none" />
+                        {/* Ripple Effect Ring */}
+                        <div className="absolute inset-0 rounded-full border border-black opacity-0 group-hover:animate-ping pointer-events-none" />
                     </motion.button>
                 </motion.div>
 
@@ -85,7 +86,7 @@ const HeroScreen = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8 }}
-                    className="mt-6 text-sm text-gray-600"
+                    className="mt-6 text-sm text-black/60"
                 >
                     {secondary}
                 </motion.p>

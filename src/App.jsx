@@ -10,6 +10,8 @@ import Why from './pages/Why.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import CalculatorWrapper from './components/CalculatorWrapper.jsx';
+import ZenDemo from './pages/demo/ZenDemo.jsx';
+import WheelDemo from './pages/demo/WheelDemo.jsx';
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -27,10 +29,12 @@ function App() {
     <CalculatorProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen bg-[#121212] text-white font-sans selection:bg-purple-500/30 relative">
+        <div className="min-h-screen bg-white text-black font-sans selection:bg-black/20 relative">
 
           <Routes>
             <Route path="/calculator" element={<CalculatorWrapper />} />
+            <Route path="/zen" element={<ZenDemo />} />
+            <Route path="/wheel" element={<WheelDemo />} />
             <Route path="*" element={
               <>
                 <InteractiveBackground />

@@ -85,11 +85,11 @@ const ContactForm = () => {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-[#1e1e1e] border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl backdrop-blur-sm bg-opacity-90"
+                className="bg-white border border-black/10 rounded-[2rem] p-10 md:p-12 shadow-2xl backdrop-blur-sm bg-opacity-95"
             >
                 <div className="text-center mb-10">
-                    <h2 className="text-3xl md:text-4xl font-light mb-4 text-white">Save Your Time</h2>
-                    <p className="text-gray-400">
+                    <h2 className="text-3xl md:text-4xl font-light mb-4 text-black">Save Your Time</h2>
+                    <p className="text-black/60">
                         We'll review your custom build and reach out.<br />
                         Let us handle the execution so you can reclaim your time.
                     </p>
@@ -97,52 +97,52 @@ const ContactForm = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                        <label className="block text-sm text-gray-400 mb-2 uppercase tracking-wide">Name</label>
+                        <label className="block text-sm text-black/50 mb-2 uppercase tracking-wide">Name</label>
                         <input
                             type="text"
                             name="name"
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white border border-black/10 rounded-2xl px-4 py-3 text-black focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all placeholder:text-black/30"
                             placeholder="Your Name"
                         />
                     </div>
 
                     <div>
-                        <label className="block text-sm text-gray-400 mb-2 uppercase tracking-wide">Email</label>
+                        <label className="block text-sm text-black/50 mb-2 uppercase tracking-wide">Email</label>
                         <input
                             type="email"
                             name="email"
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                            className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-black focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all placeholder:text-black/30"
                             placeholder="name@company.com"
                         />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label className="block text-sm text-gray-400 mb-2 uppercase tracking-wide">Phone</label>
+                            <label className="block text-sm text-black/50 mb-2 uppercase tracking-wide">Phone</label>
                             <input
                                 type="tel"
                                 name="phone"
                                 required
                                 value={formData.phone}
                                 onChange={handleChange}
-                                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                                className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-black focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all placeholder:text-black/30"
                                 placeholder="+91..."
                             />
                         </div>
                         <div>
-                            <label className="block text-sm text-gray-400 mb-2 uppercase tracking-wide">Company</label>
+                            <label className="block text-sm text-black/50 mb-2 uppercase tracking-wide">Company</label>
                             <input
                                 type="text"
                                 name="company"
                                 value={formData.company}
                                 onChange={handleChange}
-                                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                                className="w-full bg-white border border-black/10 rounded-2xl px-4 py-3 text-black focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all placeholder:text-black/30"
                                 placeholder="Company Name"
                             />
                         </div>
@@ -151,7 +151,7 @@ const ContactForm = () => {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full py-4 bg-white text-black rounded-full font-medium hover:bg-gray-200 transition-all flex items-center justify-center gap-2 mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full py-4 bg-black text-white rounded-full font-medium hover:bg-brand-red transition-all flex items-center justify-center gap-2 mt-8 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-brand-red/20"
                     >
                         {isSubmitting ? (
                             <span>Generating Report...</span>
@@ -162,7 +162,7 @@ const ContactForm = () => {
                         )}
                     </button>
 
-                    <p className="text-center text-xs text-gray-600 mt-4">
+                    <p className="text-center text-xs text-black/40 mt-4">
                         We respect your privacy. No spam.
                     </p>
                 </form>

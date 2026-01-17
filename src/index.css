@@ -2,14 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: url('https://fonts.cdnfonts.com/s/14955/ProductSans-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://fonts.cdnfonts.com/s/14955/ProductSans-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.cdnfonts.com/s/14955/ProductSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fonts.cdnfonts.com/s/14955/ProductSans-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts.cdnfonts.com/s/14955/ProductSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: url('https://fonts.cdnfonts.com/s/14955/ProductSans-Black.woff') format('woff');
+}
+
+:root,
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+button,
+input,
+textarea,
+select {
+  font-family: 'Google Sans', sans-serif !important;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #121212;
+  color-scheme: light;
+  color: #0C0E10;
+  /* background-color: #FFFFFF;  <-- REMOVED THIS */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,13 +79,13 @@
   --color-acceleration: #FF5722;
   --color-expression: #9C27B0;
 
-  --color-primary: #ffffff;
-  --color-secondary: #a0a0a0;
-  --color-accent: #646cff;
-  /* Replace with brand accent */
+  --color-primary: #0C0E10;
+  --color-secondary: #0C0E10;
+  /* Strict adherence, maybe opacity? */
+  --color-accent: #4285F4;
 
-  --bg-card: #1e1e1e;
-  --bg-dark: #121212;
+  --bg-card: #FFFFFF;
+  --bg-dark: #FFFFFF;
 }
 
 body {

@@ -6,7 +6,7 @@ import WorldMap from './WorldMap.jsx';
 import ModuleSelection from './ModuleSelection.jsx';
 import LevelSelection from './LevelSelection.jsx';
 import CostReveal from './CostReveal.jsx';
-import EfficiencyMeter from './EfficiencyMeter.jsx';
+
 import Playground from './Playground.jsx';
 import RetainerPath from './RetainerPath.jsx';
 import FinalSummary from './FinalSummary.jsx';
@@ -58,7 +58,6 @@ const CalculatorWrapper = () => {
                     </motion.div>
                 </AnimatePresence>
             </div>
-            {currentStage < STAGES.RETAINER_PATH && <EfficiencyMeter />}
         </div>
     );
 };

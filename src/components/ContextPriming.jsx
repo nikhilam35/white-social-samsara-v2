@@ -29,13 +29,13 @@ const ContextPriming = () => {
     };
 
     return (
-        <div className="h-screen w-full flex flex-col justify-center items-center px-6 max-w-2xl mx-auto">
+        <div className="h-screen w-full flex flex-col justify-center items-center px-6 max-w-2xl mx-auto relative z-10">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="text-center mb-12"
             >
-                <span className="text-sm font-medium text-gray-500 uppercase tracking-widest mb-2 block">
+                <span className="text-sm font-medium text-black/40 uppercase tracking-widest mb-2 block">
                     Step {currentQIndex + 1} • {currentQuestion.stepTitle}
                 </span>
             </motion.div>
@@ -49,7 +49,7 @@ const ContextPriming = () => {
                     transition={{ duration: 0.3 }}
                     className="w-full"
                 >
-                    <h2 className="text-3xl md:text-4xl font-light text-center mb-10 leading-snug">
+                    <h2 className="text-3xl md:text-4xl font-light text-center mb-10 leading-snug text-black">
                         {currentQuestion.prompt}
                     </h2>
 
@@ -63,8 +63,8 @@ const ContextPriming = () => {
                                     className={`
                     w-full p-5 rounded-xl border text-left flex justify-between items-center transition-all duration-200
                     ${isActive
-                                            ? 'border-white bg-white/10 text-white'
-                                            : 'border-white/10 text-gray-400 hover:border-white/30 hover:bg-white/5'
+                                            ? 'border-brand-red bg-brand-red text-white shadow-lg shadow-brand-red/20'
+                                            : 'border-black/10 bg-white text-black/70 hover:border-brand-red hover:text-brand-red hover:shadow-md'
                                         }
                   `}
                                 >
@@ -80,7 +80,7 @@ const ContextPriming = () => {
                             initial={{ opacity: 0, y: 5 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-center mt-6 text-gray-500 text-sm"
+                            className="text-center mt-6 text-black/50 text-sm"
                         >
                             {currentQuestion.helper}
                         </motion.p>
@@ -92,7 +92,7 @@ const ContextPriming = () => {
                 {PRIMING_QUESTIONS.map((_, idx) => (
                     <div
                         key={idx}
-                        className={`h-1 rounded-full transition-all duration-300 ${idx === currentQIndex ? 'w-8 bg-white' : 'w-2 bg-gray-700'}`}
+                        className={`h-1 rounded-full transition-all duration-300 ${idx === currentQIndex ? 'w-8 bg-brand-red' : 'w-2 bg-black/10'}`}
                     />
                 ))}
             </div>

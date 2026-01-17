@@ -27,50 +27,62 @@ const WorldMap = () => {
                 <div className="mb-6">
                     <button
                         onClick={prevStage}
-                        className="text-sm text-gray-300 hover:text-white flex items-center gap-2 mx-auto transition-all px-5 py-2.5 bg-white/5 hover:bg-white/15 border border-white/10 rounded-full shadow-lg backdrop-blur-sm"
+                        className="text-sm flex items-center gap-2 mx-auto transition-all px-5 py-2.5 bg-white hover:bg-gray-50 border border-black/10 rounded-full shadow-sm text-black/60 hover:text-black backdrop-blur-sm"
                     >
                         Start Over
                     </button>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-light mb-6">{title}</h2>
-                <p className="text-xl text-gray-400 leading-relaxed">{body}</p>
+                <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-black">Select Your Growth Path</h2>
+                <p className="text-xl text-black/60 leading-relaxed">Start with the bucket that aligns with your immediate goals.</p>
             </motion.div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-16 px-4">
                 {Object.entries(WORLDS).map(([key, world], index) => (
                     <motion.div
                         key={world.id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        whileHover={{ y: -5, scale: 1.02 }}
-                        className="group relative bg-[#1a1a1a] rounded-2xl p-8 border border-white/5 hover:border-white/20 transition-all cursor-pointer flex flex-col h-full"
+                        whileHover={{ y: -8 }}
+                        className="group relative bg-white rounded-[2rem] p-8 border border-gray-200 transition-all cursor-pointer flex flex-col h-full hover:shadow-2xl hover:shadow-black/5 hover:border-black/10"
                         onClick={() => handleEnterWorld(key)}
                     >
-                        {/* Status / Decor */}
-                        <div
-                            className="w-12 h-12 rounded-full mb-6 flex items-center justify-center text-xl"
-                            style={{ backgroundColor: `${world.color}20`, color: world.color }}
-                        >
-                            {/* Icon placeholder - could be distinct per world */}
-                            {world.name[0]}
+                        {/* Number Badge */}
+                        <div className="mb-6">
+                            <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                                Path 0{index + 1}
+                            </span>
                         </div>
 
-                        <h3 className="text-2xl font-light mb-3">{world.name}</h3>
-                        <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
+                        <h3 className="text-2xl font-serif font-bold mb-2 text-black leading-tight">{world.name}</h3>
+
+                        <p className="text-black/60 text-sm leading-relaxed mb-8 flex-grow mt-4">
                             {world.description}
                         </p>
 
-                        <div className="flex items-center text-sm font-medium text-white/50 group-hover:text-white transition-colors">
-                            Enter System <ArrowRight className="w-4 h-4 ml-2" />
-                        </div>
+                        <button className="w-full py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors mb-8 shadow-sm">
+                            Enter System
+                        </button>
 
-                        {/* Hover Glow */}
-                        <div
-                            className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none"
-                            style={{ background: `radial-gradient(circle at center, ${world.color}, transparent 70%)` }}
-                        />
+                        {/* Feature List */}
+                        <div className="border-t border-gray-100 pt-8 space-y-3">
+                            {world.services.slice(0, 3).map((service, i) => (
+                                <div key={i} className="flex items-start gap-3 w-full">
+                                    <div className="mt-1 w-4 h-4 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-green-600" />
+                                    </div>
+                                    <span className="text-sm text-black/60 leading-tight">
+                                        {service.name}
+                                    </span>
+                                </div>
+                            ))}
+                            {world.services.length > 3 && (
+                                <div className="text-xs text-black/30 pl-7">
+                                    + {world.services.length - 3} more modules
+                                </div>
+                            )}
+                        </div>
                     </motion.div>
                 ))}
             </div>
@@ -79,7 +91,7 @@ const WorldMap = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-gray-600 text-sm"
+                className="text-black/40 text-sm"
             >
                 {note}
             </motion.p>
